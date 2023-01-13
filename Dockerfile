@@ -33,6 +33,9 @@ FROM scratch
 
 COPY --from=builder /dist/go-hello /
 
+# Expose port 8082 to the outside world
+EXPOSE 8082
+
 # Command to run
 ENTRYPOINT ["/go-hello"]
 

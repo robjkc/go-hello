@@ -1,0 +1,9 @@
+docker build -t robjkc/go-hello:v1 .
+docker run --name go-hello -p 8888:8082 -d robjkc/go-hello:v1
+docker images
+docker push robjkc/go-hello:v1
+
+
+docker build -t robjkc/go-hello:1.0.0 .
+docker push robjkc/go-hello:1.0.0
+

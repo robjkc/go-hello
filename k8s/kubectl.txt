@@ -1,0 +1,14 @@
+kubectl apply -f k8s/deployment.yaml --namespace dev
+kubectl apply -f k8s/service.yaml --namespace dev
+
+kubectl get pods -n dev
+kubectl get deployment -n dev
+kubectl get replicaset -n dev
+kubectl get service go-hello -n dev
+
+kubectl delete services go-hello-service -n dev
+kubectl delete deployment  go-hello -n dev
+kubectl get pods -n dev
+
+
+https://hello.apps.local/app/go-hello/robert
