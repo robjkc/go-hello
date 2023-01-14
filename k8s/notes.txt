@@ -1,0 +1,8 @@
+URL
+https://hello.apps.local/app/go-hello/robert
+
+Build and Deploy Containerized Applications with Golang on Kubernetes
+https://www.coding-bootcamps.com/blog/build-containerized-applications-with-golang-on-kubernetes.html#p6
+
+hello-kuberentes github project
+https://github.com/robjkc/hello-kubernetes

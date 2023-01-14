@@ -11,4 +11,3 @@ kubectl delete deployment  go-hello -n dev
 kubectl get pods -n dev
 
 
-https://hello.apps.local/app/go-hello/robert
