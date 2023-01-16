@@ -1,5 +1,8 @@
 Video - Hands-on Introduction to Skaffold | Rawkode Live
+https://www.youtube.com/watch?v=U7ybnPmwKik
 
+Video - Skaffold - Local Kubernetes Development Made Easy
+https://www.youtube.com/watch?v=tTNrzEjROCo
 
 kubectl config current-context
 
