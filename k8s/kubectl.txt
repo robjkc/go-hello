@@ -10,4 +10,6 @@ kubectl delete services go-hello-service -n dev
 kubectl delete deployment  go-hello -n dev
 kubectl get pods -n dev
 
+- Show the current context
+kubectl config current-context
 

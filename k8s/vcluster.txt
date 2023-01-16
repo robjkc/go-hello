@@ -1,0 +1,13 @@
+vcluster create robert-cluster
+
+kubectl create namespace tdemo
+kubectl get namespaces
+
+kubectl apply -f k8s/deployment.yaml --namespace tdemo
+kubectl apply -f k8s/service.yaml --namespace tdemo
+
+Create ingress
+https://hello.apps.local/app/tdemo/go-hello/robert2
+
+vcluster delete tdemo
+vcluster diconnect

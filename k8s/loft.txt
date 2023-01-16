@@ -1,0 +1,48 @@
+
+Install via helm chart in RKE2
+Run "loft start" on command line while connected to the local RKE2 cluster
+
+robert@dmpkubuntu ~/d/k/c/l/go-hello> loft start                                                           master!?
+
+[info]   Existing Loft instance found.
+
+? Do you want to enable access to Loft via ingress?
+ Yes, I want to enable the ingress to be able to access Loft via a domain.
+
+? Seems like your cluster is running locally (docker desktop, minikube, kind etc.). Is that correct?
+ No, my cluster is running not locally (GKE, EKS, Bare Metal etc.
+
+? Enter a hostname for your Loft instance (e.g. loft.my-domain.tld):
+  loft.apps.local
+
+? Ingress controller required. Should the nginx-ingress controller be installed?
+ No, I already have an ingress controller installed.
+
+[info]   Executing command: helm upgrade loft loft --install --reuse-values --create-namespace --repository-config='' --kube-context local --namespace loft --repo https://charts.loft.sh/ --set admin.password=2346f5d0-8128-4477-90b7-d5b467e493da --set ingress.enabled=true --set ingress.host=loft.apps.local --reuse-values
+
+[done] √ Loft has been deployed to your cluster!
+[done] √ Loft pod successfully started
+
+
+
+##########################   LOGIN   ############################
+
+Username: admin
+Password: 2346f5d0-8128-4477-90b7-d5b467e493da  # Change via UI or via: loft reset password
+
+Login via UI:  https://loft.apps.local
+Login via CLI: loft login --insecure https://loft.apps.local
+
+!!! You must accept the untrusted certificate in your browser !!!
+
+Follow this guide to add a valid certificate: https://loft.sh/docs/administration/ssl
+
+#################################################################
+
+Loft was successfully installed and can now be reached at: https://loft.apps.local
+
+Thanks for using Loft!
+
+
+
+
