@@ -1,0 +1,14 @@
+Video - Hands-on Introduction to Skaffold | Rawkode Live
+
+
+kubectl config current-context
+
+- Login to docker hub
+docker login
+
+Run scaffold dev:
+skaffold dev --default-repo robjkc
+
+When done:
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
