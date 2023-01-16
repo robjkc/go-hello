@@ -44,5 +44,9 @@ Loft was successfully installed and can now be reached at: https://loft.apps.loc
 Thanks for using Loft!
 
 
+------------
 
+loft login https://loft.apps.local/ --insecure
 
+# Copied from UI
+loft use vcluster devspace-test --cluster loft-cluster --space vcluster-devspace-test-1xl7f
