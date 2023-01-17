@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: go-hello
-          image: go-hello
+          image: go-hello-image
           ports:
             - containerPort: 8082
 

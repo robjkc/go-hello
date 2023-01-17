@@ -1,0 +1,5 @@
+Article -
+https://dev.to/eminetto/accelerate-your-local-development-environment-with-tilt-46n7
+
+Article - Develop zero trust microservices on Kubernetes and Istio locally with Tilt (Part 2)
+https://medium.com/@hemi_1337/develop-zero-trust-microservices-on-kubernetes-and-istio-locally-with-tilt-part-2-1d308e1cec48
