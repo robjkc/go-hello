@@ -9,3 +9,9 @@ https://www.mirantis.com/blog/how-to-make-very-small-containers-for-golang-binar
 
 Article - The ultimate guide for local development on Kubernetes: Draft vs Skaffold vs Garden.io
 https://codefresh.io/blog/local-k8s-draft-skaffold-garden/
+
+Article - Example: Go
+https://docs.tilt.dev/example_go.html
+
+Article - Launching & Managing Resources
+https://docs.tilt.dev/tutorial/2-tilt-up.html
