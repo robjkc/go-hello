@@ -4,6 +4,9 @@ https://www.youtube.com/watch?v=U7ybnPmwKik
 Video - Skaffold - Local Kubernetes Development Made Easy
 https://www.youtube.com/watch?v=tTNrzEjROCo
 
+Video - Debugging Kubernetes Services with Skaffold, VSCode & Cloud Code
+https://www.youtube.com/watch?v=g38S--qYbWY
+
 kubectl config current-context
 
 - Login to docker hub
@@ -15,3 +18,5 @@ skaffold dev --default-repo robjkc
 When done:
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
+
+- Cloud Run Notes
