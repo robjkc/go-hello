@@ -7,6 +7,9 @@ https://www.youtube.com/watch?v=tTNrzEjROCo
 Video - Debugging Kubernetes Services with Skaffold, VSCode & Cloud Code
 https://www.youtube.com/watch?v=g38S--qYbWY
 
+Article - How to Simplify Your Local Kubernetes Development With Skaffold
+https://dev.to/otomato_io/local-kubernetes-development-with-skaffold-i0k
+
 kubectl config current-context
 
 - Login to docker hub

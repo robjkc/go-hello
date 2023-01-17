@@ -3,3 +3,9 @@ https://dev.to/eminetto/accelerate-your-local-development-environment-with-tilt-
 
 Article - Develop zero trust microservices on Kubernetes and Istio locally with Tilt (Part 2)
 https://medium.com/@hemi_1337/develop-zero-trust-microservices-on-kubernetes-and-istio-locally-with-tilt-part-2-1d308e1cec48
+
+Article - Today I learned: How to make very small containers for golang binaries
+https://www.mirantis.com/blog/how-to-make-very-small-containers-for-golang-binaries/
+
+Article - The ultimate guide for local development on Kubernetes: Draft vs Skaffold vs Garden.io
+https://codefresh.io/blog/local-k8s-draft-skaffold-garden/

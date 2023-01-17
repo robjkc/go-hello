@@ -8,6 +8,7 @@ load('ext://restart_process', 'docker_build_with_restart')
 local_resource(
     'go-hello-compile',
     cmd='CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bin/go-hello main.go',
+    deps=['./main.go']
 )
 
 docker_build_with_restart(
