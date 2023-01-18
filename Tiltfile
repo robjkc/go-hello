@@ -16,6 +16,9 @@ docker_build_with_restart(
     '.',
     dockerfile='./tilt/Dockerfile',
     entrypoint=['/go-hello'],
+    only=[
+        './bin/go-hello',
+    ],
     live_update=[
         sync('./bin/go-hello', '/go-hello'),
     ],

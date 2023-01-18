@@ -15,3 +15,11 @@ https://docs.tilt.dev/example_go.html
 
 Article - Launching & Managing Resources
 https://docs.tilt.dev/tutorial/2-tilt-up.html
+
+Article - Many Tiltfiles and Many Repos
+https://docs.tilt.dev/multiple_repos.html
+
+Live Update
+https://github.com/tilt-dev/tilt/issues/5895
+https://docs.tilt.dev/file_changes.html
+(Good) Unwanted container rebuilds - https://github.com/tilt-dev/tilt/issues/5056
