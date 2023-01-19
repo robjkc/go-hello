@@ -1,6 +1,6 @@
 # Setup
-default_registry('docker.io/robjkc')
-allow_k8s_contexts(k8s_context())
+#default_registry('docker.io/robjkc')
+#allow_k8s_contexts(k8s_context())
 
 # For more on Extensions, see: https://docs.tilt.dev/extensions.html
 load('ext://restart_process', 'docker_build_with_restart')

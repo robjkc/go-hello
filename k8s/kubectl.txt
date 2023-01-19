@@ -12,4 +12,5 @@ kubectl get pods -n dev
 
 - Show the current context
 kubectl config current-context
-
+kubectl config get-contexts
+kubectl config use-context local
