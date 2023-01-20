@@ -1,0 +1,13 @@
+failed to create fsnotify watcher: too many open files
+https://www.42.mach7x.com/2022/07/26/failed-to-create-fsnotify-watcher-too-many-open-files/
+
+> cat /proc/sys/fs/inotify/max_user_instances
+128
+> sudo sysctl fs.inotify.max_user_instances=8192
+fs.inotify.max_user_instances = 8192
+> cat /proc/sys/fs/inotify/max_user_instances
+8192
+
+- Minikube check memory usage
+https://www.shellhacks.com/minikube-start-with-more-memory-cpus/
+kubectl get node minikube -o jsonpath='{.status.capacity}'
