@@ -1,6 +1,8 @@
 kubectl apply -f k8s/deployment.yaml --namespace dev
 kubectl apply -f k8s/service.yaml --namespace dev
 
+kubectl get nodes
+
 kubectl get pods -n dev
 kubectl get deployment -n dev
 kubectl get replicaset -n dev
@@ -14,3 +16,10 @@ kubectl get pods -n dev
 kubectl config current-context
 kubectl config get-contexts
 kubectl config use-context local
+
+kubectl get pods -o wide
+kubectl exec -it go-hello-6bcfd7965f-hw7m4 -- s
+> traceroute 10.244.1.37
+> route -n
+> hostname
+> cat /etc/resolv.conf

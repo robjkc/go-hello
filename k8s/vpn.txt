@@ -1,0 +1,52 @@
+
+https://stackoverflow.com/questions/59129050/vpn-to-access-cluster-services-pods-cannot-ping-anything-except-openvpn-serv
+
+For anybody looking for a working sample, this is going to go into your openvpn deployment along side your container definition:
+
+initContainers:
+- args:
+  - -w
+  - net.ipv4.ip_forward=1
+  command:
+  - sysctl
+  image: busybox
+  name: openvpn-sidecar
+  securityContext:
+    privileged: true
+
+
+https://hub.docker.com/_/busybox
+https://linuxconfig.org/how-to-turn-on-off-ip-forwarding-in-linux
+
+https://kasmweb.com/docs/latest/how_to/vpn_sidecar.html
+https://www.reddit.com/r/kubernetes/comments/r7opkm/vpn_client_in_one_pod_and_other_pods_connect_to/
+
+https://docs.k8s-at-home.com/guides/pod-gateway/#exposing-routed-pod-ports-from-the-gateway
+https://hub.docker.com/r/ptlange/openvpn/
+https://networkservicemesh.io/docs/concepts/k8s/
+
+Multus
+https://github.com/k8snetworkplumbingwg/multus-cni
+https://devopstales.github.io/kubernetes/multus/
+Good - https://dougbtv.com/nfvpe/2017/12/19/multus-crd/
+Video - Multus on microK8s - https://www.google.com/search?q=Multus+CNI+vpn+client&sxsrf=AJOqlzXDprKFYjmgRWhdEUBdwS82GKMr9A%3A1674175093128&ei=deLJY9yzB_WgptQP-eiKgAE&ved=0ahUKEwicwt6d9NT8AhV1kIkEHXm0AhAQ4dUDCBA&uact=5&oq=Multus+CNI+vpn+client&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCCEQoAEyBQghEKABMgUIIRCgATIFCCEQqwI6CggAEEcQ1gQQsAM6BQgAEIAEOgkIABAWEB4Q8QQ6BggAEBYQHjoFCAAQhgNKBAhBGABKBAhGGABQuAtYkBNggxRoAnAAeACAAbUBiAGICpIBAzAuOZgBAKABAcgBCMABAQ&sclient=gws-wiz-serp#fpstate=ive&vld=cid:d29a1f55,vid:jd5Q45sukMk
+
+
+Video - Container Network Interface (CNI) explained in 7 minutes - https://www.youtube.com/watch?v=l2BS_kuQxBA
+
+
+https://www.reddit.com/r/kubernetes/comments/lpd1i6/routing_pods_egress_traffic_through_openvpn_client/
+Put the VPN client into your container and make sure to create a route back out
+the default interface for the relevant Kubernetes traffic.
+Or don’t route default to the VPN and only selectively route what you need to go in there.
+
+
+https://www.reddit.com/r/kubernetes/comments/kotsqh/openvpn_client_questions/
+securityContext:
+capabilities:
+add:
+- NET_ADMIN
+as an addendum if you set up your app so you have both this and your application
+code in the same pod the traffic will be automatically routed
+
+
