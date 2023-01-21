@@ -23,3 +23,5 @@ Live Update
 https://github.com/tilt-dev/tilt/issues/5895
 https://docs.tilt.dev/file_changes.html
 (Good) Unwanted container rebuilds - https://github.com/tilt-dev/tilt/issues/5056
+
+Tilt links: https://docs.tilt.dev/accessing_resource_endpoints.html

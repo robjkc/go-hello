@@ -25,7 +25,7 @@ func HelloGo(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Max-Age", "15")
 
-	fmt.Fprintf(w, "{\"msg\":\"Hello from Go!\"}")
+	fmt.Fprintf(w, "{\"msg\":\"Hello from Go1!\"}")
 	fmt.Println("Go endpoint hit!")
 }
 

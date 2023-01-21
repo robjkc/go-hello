@@ -1,0 +1,8 @@
+Debugging Go with Delve and Tilt
+https://www.kriskelly.me/go-dlv-tilt-debugging
+
+How to enable debug with tilt+golang? #13
+https://github.com/tilt-dev/tilt-example-go/issues/13
+
+Article - Remote debugging with Delve
+https://golangforall.com/en/post/go-docker-delve-remote-debug.html
