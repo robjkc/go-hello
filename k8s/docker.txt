@@ -7,3 +7,9 @@ docker push robjkc/go-hello:v1
 docker build -t robjkc/go-hello:1.0.0 .
 docker push robjkc/go-hello:1.0.0
 
+
+Delete all docker images
+https://stackoverflow.com/questions/44785585/how-can-i-delete-all-local-docker-images
+docker rmi -f $(docker images -aq)
+
+

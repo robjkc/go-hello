@@ -1,15 +1,73 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
+	_ "github.com/lib/pq"
 	"io/ioutil"
+	"net"
 	"net/http"
+)
+
+const (
+	host     = "host.minikube.internal"
+	port     = 5432
+	user     = "postgres"
+	password = "postgres"
+	dbname   = "postgres"
 )
 
 func main() {
 	http.HandleFunc("/", HelloServer)
 	http.HandleFunc("/go", HelloGo)
 	http.HandleFunc("/control-system", GetControlSystem)
+
+	fmt.Println("preparing to lookup postgres-svc.")
+	ips, err := net.LookupIP("postgres-svc" +
+		"")
+	if err != nil {
+		fmt.Println("error")
+		fmt.Println(err)
+	}
+	for _, ip := range ips {
+		if ipv4 := ip.To4(); ipv4 != nil {
+			fmt.Println("IPv4: ", ipv4)
+		}
+	}
+
+	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
+		"password=%s dbname=%s sslmode=disable",
+		host, port, user, password, dbname)
+
+	fmt.Println("Prepare to open!")
+
+	db, err := sql.Open("postgres", psqlInfo)
+	if err != nil {
+		panic(err)
+	}
+	defer db.Close()
+
+	if err = db.Ping(); err != nil {
+		fmt.Println("failed to ping!")
+	} else {
+		fmt.Println("Established a successful connection!")
+	}
+
+	sqlStatement := `SELECT id, name FROM test WHERE id=$1;`
+	var email string
+	var id int
+	// Replace 3 with an ID from your database or another random
+	// value to test the no rows use case.
+	row := db.QueryRow(sqlStatement, 1)
+	switch err := row.Scan(&id, &email); err {
+	case sql.ErrNoRows:
+		fmt.Println("No rows were returned!")
+	case nil:
+		fmt.Println(id, email)
+	default:
+		fmt.Println("No data!")
+		fmt.Println(err)
+	}
 
 	fmt.Println("Listening on 8082")
 	http.ListenAndServe(":8082", nil)

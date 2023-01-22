@@ -15,7 +15,8 @@ docker_build_with_restart(
     'go-hello-image',
     '.',
     dockerfile='./tilt/Dockerfile',
-    entrypoint=['/dlv', '--listen=:40000', '--api-version=2', '--headless=true', 'exec', '/app/build/go-hello'],
+    #entrypoint=['/dlv', '--listen=:40000', '--api-version=2', '--headless=true', 'exec', '/app/build/go-hello'],
+    entrypoint=['/app/build/go-hello'],
     only=[
         './build',
     ],

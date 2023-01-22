@@ -1,0 +1,2 @@
+https://www.natarajmb.com/2021/10/kubernetes-local-development-k3d-docker/
+
