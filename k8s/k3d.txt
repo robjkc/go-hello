@@ -19,3 +19,6 @@ https://github.com/k3d-io/k3d/issues/209
 
 Using Config files
 https://k3d.io/v5.4.1/usage/configfile/
+
+Setting up Kubernetes for local development using k3d and Docker
+https://www.natarajmb.com/2021/10/kubernetes-local-development-k3d-docker/

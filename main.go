@@ -3,10 +3,13 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	_ "github.com/lib/pq"
 	"io/ioutil"
+	"log"
 	"net"
 	"net/http"
+
+	_ "github.com/denisenkom/go-mssqldb"
+	_ "github.com/lib/pq"
 )
 
 const (
@@ -23,6 +26,7 @@ func main() {
 	http.HandleFunc("/control-system", GetControlSystem)
 
 	initPostgres()
+	initFarad()
 
 	fmt.Println("Listening on 8082")
 	http.ListenAndServe(":8082", nil)
@@ -104,4 +108,34 @@ func initPostgres() {
 		fmt.Println("No data!")
 		fmt.Println(err)
 	}
+}
+
+func initFarad() {
+	connString := fmt.Sprintf("server=%s;user id=%s;password=%s;database=%s;port=%d",
+		"farad.local", "rjohnsonscw", "t1oyota2", "farad_production", 1433)
+	fmt.Printf(" connString:%s\n", connString)
+
+	conn, err := sql.Open("mssql", connString)
+	if err != nil {
+		log.Fatal("Open connection failed:", err.Error())
+	}
+	defer conn.Close()
+
+	stmt, err := conn.Prepare("select id, name from control_systems where id = 24")
+	if err != nil {
+		log.Fatal("Prepare failed:", err.Error())
+	}
+	defer stmt.Close()
+
+	row := stmt.QueryRow()
+	var controlSystemID int64
+	var controlSystemName string
+	err = row.Scan(&controlSystemID, &controlSystemName)
+	if err != nil {
+		log.Fatal("Scan failed:", err.Error())
+	}
+	fmt.Printf("controlSystemID:%d\n", controlSystemID)
+	fmt.Printf("controlSystemName:%s\n", controlSystemName)
+
+	fmt.Printf("bye\n")
 }
