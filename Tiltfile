@@ -8,6 +8,7 @@ load('ext://restart_process', 'docker_build_with_restart')
 local_resource(
     'go-hello-compile',
     cmd='CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o build/go-hello -gcflags "-N -l" ./',
+    labels="backend",
     deps=['./main.go']
 )
 
@@ -28,4 +29,4 @@ docker_build_with_restart(
 k8s_yaml('tilt/go-hello.yaml')
 
 k8s_resource('go-hello', port_forwards=['8089:8082', '40000:40000'],
-             resource_deps=['go-hello-compile'])
+             resource_deps=['go-hello-compile'], labels="backend")
