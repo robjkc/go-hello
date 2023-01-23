@@ -22,7 +22,7 @@ func main() {
 	http.HandleFunc("/go", HelloGo)
 	http.HandleFunc("/control-system", GetControlSystem)
 
-	fmt.Println("preparing to lookup postgres-svc.")
+	fmt.Println("preparing to lookup postgres.local...")
 	ips, err := net.LookupIP("postgres.local" +
 		"")
 	if err != nil {
