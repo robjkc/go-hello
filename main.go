@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	host     = "host.minikube.internal"
+	host     = "postgres.local"
 	port     = 5432
 	user     = "postgres"
 	password = "postgres"
@@ -23,7 +23,7 @@ func main() {
 	http.HandleFunc("/control-system", GetControlSystem)
 
 	fmt.Println("preparing to lookup postgres-svc.")
-	ips, err := net.LookupIP("postgres-svc" +
+	ips, err := net.LookupIP("postgres.local" +
 		"")
 	if err != nil {
 		fmt.Println("error")
@@ -83,7 +83,7 @@ func HelloGo(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Max-Age", "15")
 
-	fmt.Fprintf(w, "{\"msg\":\"Hello from Go1!\"}")
+	fmt.Fprintf(w, "{\"msg\":\"Hello from Go5!\"}")
 	fmt.Println("Go endpoint hit!")
 }
 

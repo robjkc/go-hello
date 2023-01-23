@@ -13,3 +13,6 @@ https://www.shellhacks.com/minikube-start-with-more-memory-cpus/
 kubectl get node minikube -o jsonpath='{.status.capacity}'
 
 https://www.digitalocean.com/community/tutorials/how-to-use-minikube-for-local-kubernetes-development-and-testing
+
+- To access localhost
+	host     = "host.minikube.internal"
